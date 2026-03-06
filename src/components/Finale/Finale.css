@@ -10,8 +10,7 @@
   background: linear-gradient(
     to bottom,
     var(--parchment) 0%,
-    var(--parchment-dark) 70%,
-    #2a2a3a 100%
+    var(--parchment-dark) 100%
   );
 }
 
@@ -141,10 +140,10 @@
 .finale__year {
   font-family: var(--font-typewriter);
   font-size: 0.8rem;
-  color: var(--ink-faded);
+  color: var(--sepia-light);
   margin-top: 1rem;
   letter-spacing: 0.4em;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .finale__footer {
@@ -152,8 +151,8 @@
   bottom: 2rem;
   font-family: var(--font-typewriter);
   font-size: 0.7rem;
-  color: var(--ink-faded);
-  opacity: 0.15;
+  color: var(--sepia-light);
+  opacity: 0.25;
   letter-spacing: 0.2em;
 }
 
