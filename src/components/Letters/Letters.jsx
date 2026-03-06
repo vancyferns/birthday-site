@@ -15,7 +15,7 @@ const letters = [
   },
   {
     number: 'III',
-    text: "I sometimes struggle to find the right words — maybe because you were my mentor, and that dynamic never fully goes away even when you're no longer in front of the class. But I want you to know that I am here. Even if I can't fix anything, I can listen. There's probably a lot you've carried on your own, and I hope life gives you the peace, the love, and the care you truly deserve.",
+    text: "I sometimes struggle to find the right words — maybe because you were my mentor, and that dynamic never fully goes away even when you're no longer in front of the class. But I want you to know that I am here. I know I can't understand many things. But sometimes we don't need to understand — just being there is more than enough. Even if I can't fix anything, I can listen. There's probably a lot you've carried on your own, and I hope life gives you the peace, the love, and the care you truly deserve.",
     closing: '— on what stays'
   }
 ];
