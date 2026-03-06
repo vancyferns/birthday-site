@@ -1,0 +1,178 @@
+.finale {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    var(--parchment) 0%,
+    var(--parchment-dark) 70%,
+    #2a2a3a 100%
+  );
+}
+
+.finale__candle {
+  margin-bottom: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.finale__flame {
+  width: 14px;
+  height: 30px;
+  background: radial-gradient(
+    ellipse at bottom,
+    #ffd700 0%,
+    #ff8c00 40%,
+    #ff4500 70%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flicker 2s ease-in-out infinite alternate;
+  position: relative;
+}
+
+.finale__flame::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 10px;
+  background: radial-gradient(
+    ellipse at bottom,
+    #4169E1 0%,
+    transparent 100%
+  );
+  border-radius: 50%;
+}
+
+.finale__flame-glow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 200, 50, 0.15) 0%,
+    transparent 70%
+  );
+  animation: glow-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.finale__wick {
+  width: 2px;
+  height: 8px;
+  background: #333;
+}
+
+.finale__wax {
+  width: 20px;
+  height: 60px;
+  background: linear-gradient(
+    to bottom,
+    #f5f0e8 0%,
+    #e8dcc8 100%
+  );
+  border-radius: 2px 2px 3px 3px;
+  position: relative;
+}
+
+.finale__wax::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -2px;
+  right: -2px;
+  height: 6px;
+  background: #f5f0e8;
+  border-radius: 50%;
+}
+
+@keyframes flicker {
+  0% { transform: scale(1) rotate(-1deg); opacity: 1; }
+  25% { transform: scale(1.05) rotate(1deg); opacity: 0.9; }
+  50% { transform: scale(0.95) rotate(-2deg); opacity: 1; }
+  75% { transform: scale(1.02) rotate(1.5deg); opacity: 0.95; }
+  100% { transform: scale(1) rotate(-0.5deg); opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.9; transform: translateX(-50%) scale(1.1); }
+}
+
+.finale__wish {
+  font-family: var(--font-handwriting);
+  font-size: 2.8rem;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  max-width: 700px;
+}
+
+.finale__message {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  color: var(--ink-light);
+  max-width: 500px;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.finale__signature {
+  font-family: var(--font-handwriting);
+  font-size: 1.1rem;
+  color: var(--sepia);
+  margin-top: 3rem;
+  opacity: 0.6;
+}
+
+.finale__year {
+  font-family: var(--font-typewriter);
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+  margin-top: 1rem;
+  letter-spacing: 0.4em;
+  opacity: 0.3;
+}
+
+.finale__footer {
+  position: absolute;
+  bottom: 2rem;
+  font-family: var(--font-typewriter);
+  font-size: 0.7rem;
+  color: var(--ink-faded);
+  opacity: 0.15;
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 768px) {
+  .finale__wish {
+    font-size: 2rem;
+  }
+  
+  .finale__message {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .finale__wish {
+    font-size: 1.6rem;
+  }
+  
+  .finale__message {
+    font-size: 1.15rem;
+  }
+}

@@ -1,0 +1,130 @@
+.letters {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.letters__heading {
+  font-family: var(--font-typewriter);
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--sepia-light);
+  margin-bottom: 4rem;
+  opacity: 0.6;
+}
+
+.letters__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 1000px;
+}
+
+.letter-card {
+  background: linear-gradient(
+    145deg,
+    var(--parchment-light) 0%,
+    var(--parchment) 50%,
+    var(--parchment-dark) 100%
+  );
+  padding: 2.5rem 2rem;
+  max-width: 300px;
+  position: relative;
+  cursor: default;
+  box-shadow:
+    2px 3px 15px rgba(92, 74, 50, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(139, 115, 85, 0.15);
+}
+
+.letter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 28px,
+    rgba(139, 115, 85, 0.08) 28px,
+    rgba(139, 115, 85, 0.08) 29px
+  );
+  pointer-events: none;
+}
+
+.letter-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 35px;
+  width: 1px;
+  height: 100%;
+  background: rgba(107, 45, 62, 0.12);
+  pointer-events: none;
+}
+
+.letter-card__number {
+  font-family: var(--font-typewriter);
+  font-size: 0.75rem;
+  color: var(--sepia-light);
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2em;
+}
+
+.letter-card__text {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  line-height: 1.9;
+  color: var(--ink-light);
+  position: relative;
+  z-index: 1;
+}
+
+.letter-card__closing {
+  font-family: var(--font-handwriting);
+  font-size: 0.9rem;
+  color: var(--sepia);
+  margin-top: 1.5rem;
+  text-align: right;
+  opacity: 0.7;
+}
+
+/* Card rotations for organic feel */
+.letter-card:nth-child(1) {
+  transform: rotate(-1.5deg);
+}
+
+.letter-card:nth-child(2) {
+  transform: rotate(0.8deg);
+  margin-top: 2rem;
+}
+
+.letter-card:nth-child(3) {
+  transform: rotate(-0.5deg);
+}
+
+@media (max-width: 768px) {
+  .letters__grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .letter-card {
+    max-width: 100%;
+  }
+  
+  .letter-card:nth-child(1),
+  .letter-card:nth-child(2),
+  .letter-card:nth-child(3) {
+    transform: rotate(0);
+    margin-top: 0;
+  }
+}

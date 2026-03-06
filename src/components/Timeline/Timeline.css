@@ -1,0 +1,219 @@
+.timeline {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.timeline__heading {
+  font-family: var(--font-typewriter);
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--sepia-light);
+  margin-bottom: 4rem;
+  opacity: 0.6;
+}
+
+/* ─── Card Deck ─── */
+.timeline__deck {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline__active-area {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  perspective: 1000px;
+}
+
+/* ─── Stacked cards behind ─── */
+.timeline__stack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.timeline__stack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    145deg,
+    var(--parchment-light) 0%,
+    var(--parchment) 50%,
+    var(--parchment-dark) 100%
+  );
+  border: 1px solid rgba(139, 115, 85, 0.12);
+  box-shadow: 2px 3px 10px rgba(92, 74, 50, 0.08);
+  transition: all 0.4s ease;
+}
+
+/* ─── Active Card ─── */
+.timeline__card {
+  background: linear-gradient(
+    145deg,
+    var(--parchment-light) 0%,
+    var(--parchment) 50%,
+    var(--parchment-dark) 100%
+  );
+  padding: 3rem 2.5rem;
+  border: 1px solid rgba(139, 115, 85, 0.15);
+  box-shadow:
+    2px 3px 20px rgba(92, 74, 50, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timeline__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 28px,
+    rgba(139, 115, 85, 0.06) 28px,
+    rgba(139, 115, 85, 0.06) 29px
+  );
+  pointer-events: none;
+}
+
+.timeline__label {
+  font-family: var(--font-typewriter);
+  font-size: 0.75rem;
+  color: var(--sepia-light);
+  letter-spacing: 0.25em;
+  margin-bottom: 1.2rem;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.timeline__text {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--ink-light);
+}
+
+.timeline__highlight {
+  font-family: var(--font-handwriting);
+  font-size: 1.15rem;
+  color: var(--ink);
+  font-style: italic;
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+/* ─── Navigation ─── */
+.timeline__nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.timeline__nav-btn {
+  background: none;
+  border: 1px solid rgba(139, 115, 85, 0.25);
+  color: var(--sepia);
+  font-size: 1.2rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-typewriter);
+  opacity: 0.6;
+}
+
+.timeline__nav-btn:hover:not(.timeline__nav-btn--disabled) {
+  opacity: 1;
+  border-color: var(--sepia);
+  box-shadow: 0 2px 8px rgba(92, 74, 50, 0.1);
+}
+
+.timeline__nav-btn--disabled {
+  opacity: 0.15;
+  cursor: not-allowed;
+}
+
+.timeline__dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.timeline__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sepia-light);
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+.timeline__dot--active {
+  opacity: 0.8;
+  transform: scale(1.5);
+  background: var(--sepia);
+}
+
+.timeline__dot--visited {
+  opacity: 0.5;
+}
+
+.timeline__counter {
+  font-family: var(--font-typewriter);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--sepia-light);
+  opacity: 0.3;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .timeline__card {
+    padding: 2rem 1.5rem;
+    min-height: 200px;
+  }
+  
+  .timeline__text {
+    font-size: 1.25rem;
+  }
+  
+  .timeline__active-area {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    padding: 4rem 1rem;
+  }
+  
+  .timeline__nav {
+    gap: 1rem;
+  }
+}

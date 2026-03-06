@@ -1,0 +1,145 @@
+.lock-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--parchment);
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.lock-screen__enigma {
+  font-family: var(--font-typewriter);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  margin-bottom: 3rem;
+  opacity: 0.6;
+}
+
+.lock-screen__prompt {
+  font-family: var(--font-handwriting);
+  font-size: 1.6rem;
+  color: var(--ink-light);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+.lock-screen__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lock-screen__inputs {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.lock-screen__input {
+  width: 70px;
+  padding: 0.8rem 0.5rem;
+  text-align: center;
+  font-family: var(--font-typewriter);
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--sepia-light);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.lock-screen__input--year {
+  width: 100px;
+}
+
+.lock-screen__input:focus {
+  border-bottom-color: var(--ink);
+}
+
+.lock-screen__input::placeholder {
+  color: var(--ink-faded);
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+.lock-screen__separator {
+  font-family: var(--font-typewriter);
+  font-size: 1.5rem;
+  color: var(--sepia-light);
+  user-select: none;
+}
+
+.lock-screen__submit {
+  background: transparent;
+  border: 1px solid var(--sepia-light);
+  color: var(--sepia);
+  font-family: var(--font-typewriter);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: lowercase;
+  margin-top: 0.5rem;
+}
+
+.lock-screen__submit:hover {
+  background: var(--ink);
+  color: var(--parchment);
+  border-color: var(--ink);
+}
+
+.lock-screen__error {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--blood-ink);
+  min-height: 1.5rem;
+  opacity: 0.8;
+}
+
+.lock-screen__hint {
+  position: absolute;
+  bottom: 3rem;
+  font-family: var(--font-typewriter);
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  opacity: 0.3;
+  letter-spacing: 0.15em;
+}
+
+.lock-screen__quill {
+  margin-bottom: 2rem;
+  opacity: 0.15;
+}
+
+@media (max-width: 480px) {
+  .lock-screen__prompt {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+  
+  .lock-screen__inputs {
+    gap: 0.5rem;
+  }
+  
+  .lock-screen__input {
+    width: 55px;
+    font-size: 1rem;
+  }
+  
+  .lock-screen__input--year {
+    width: 80px;
+  }
+}
